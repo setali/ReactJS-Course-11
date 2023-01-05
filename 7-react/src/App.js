@@ -15,12 +15,18 @@
 // import PureComponent from './14-PureComponent'
 // import HOC from './15-HOC/App'
 // import Stateless from './16-Stateless'
-import ClassVSFunction from './17-ClassVSFunction'
+// import ClassVSFunction from './17-ClassVSFunction'
+// import UseState from "./18-UseState"
+// import UseEffect from "./19-UseEffect"
+import AdvanceStateEffect from './20-AdvanceStateEffect'
 
 export default function App () {
   return (
     <div>
-      <ClassVSFunction />
+      <AdvanceStateEffect />
+      {/* <UseEffect /> */}
+      {/* <UseState /> */}
+      {/* <ClassVSFunction /> */}
       {/* <Stateless /> */}
       {/* <HOC /> */}
       {/* <PureComponent /> */}
