@@ -18,12 +18,34 @@
 // import ClassVSFunction from './17-ClassVSFunction'
 // import UseState from "./18-UseState"
 // import UseEffect from "./19-UseEffect"
-import AdvanceStateEffect from './20-AdvanceStateEffect'
+// import AdvanceStateEffect from './20-AdvanceStateEffect'
+// import HooksRules from './21-HooksRules'
+// import CustomHooks from './22-CustomHooks'
+// import TodosUseState from './23-TodosUseState'
+// import UseReducer from './24-UseReducer'
+// import TodosUseReducer from './25-TodosUseReducer'
+// import UseMemo from './26-UseMemo'
+// import Memo from './27-Memo'
+// import UseRef from './28-UseRef'
+// import UseCallback from './29-UseCallback'
+// import Lazy from './30-Lazy/Main'
+import Table from './exercise/table/App'
 
 export default function App () {
   return (
     <div>
-      <AdvanceStateEffect />
+      <Table />
+      {/* <Lazy /> */}
+      {/* <UseCallback /> */}
+      {/* <UseRef /> */}
+      {/* <Memo /> */}
+      {/* <UseMemo /> */}
+      {/* <TodosUseReducer /> */}
+      {/* <UseReducer /> */}
+      {/* <TodosUseState /> */}
+      {/* <CustomHooks /> */}
+      {/* <HooksRules /> */}
+      {/* <AdvanceStateEffect /> */}
       {/* <UseEffect /> */}
       {/* <UseState /> */}
       {/* <ClassVSFunction /> */}
