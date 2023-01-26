@@ -29,12 +29,14 @@
 // import UseRef from './28-UseRef'
 // import UseCallback from './29-UseCallback'
 // import Lazy from './30-Lazy/Main'
-import Table from './exercise/table/App'
+// import Table from './exercise/table/App'
+import Context from './31-context/App'
 
 export default function App () {
   return (
     <div>
-      <Table />
+      <Context />
+      {/* <Table /> */}
       {/* <Lazy /> */}
       {/* <UseCallback /> */}
       {/* <UseRef /> */}
