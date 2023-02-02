@@ -1,6 +1,5 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
-import request from '../tools/request'
+import request, { UnauthorizeRequest } from '../tools/request'
 import { getToken, removeToken, setToken } from '../tools/utils'
 
 export default function useAuth () {
@@ -15,7 +14,7 @@ export default function useAuth () {
   }
 
   function login (data) {
-    request({ url: '/api/login', method: 'post', data })
+    UnauthorizeRequest({ url: '/api/login', method: 'post', data })
       .then(({ data }) => {
         logon(data)
         setLoginError(undefined)

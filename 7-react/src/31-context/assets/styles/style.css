@@ -35,3 +35,16 @@
   margin-left: 0.5rem;
   cursor: pointer;
 }
+
+.article-image {
+  text-align: center;
+}
+
+.article-image img {
+  width: 50%;
+  border-radius: 5%;
+}
+
+a.active {
+  color: green;
+}

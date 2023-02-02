@@ -6,6 +6,10 @@ const request = axios.create({
   baseURL: BASE_URL
 })
 
+export const UnauthorizeRequest = axios.create({
+  baseURL: BASE_URL
+})
+
 request.interceptors.request.use(
   function (config) {
     const token = getToken()
