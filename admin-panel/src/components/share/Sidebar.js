@@ -1,7 +1,10 @@
 import {
-    DashboardOutlined, SettingOutlined, UserOutlined
+  DashboardOutlined,
+  SettingOutlined,
+  UserOutlined
 } from '@ant-design/icons'
 import { Layout, Menu } from 'antd'
+import { Link } from 'react-router-dom'
 
 const { Sider } = Layout
 
@@ -15,10 +18,10 @@ function getItem (label, key, icon, children, type) {
   }
 }
 const items = [
-  getItem('داشبورد', 'dashboard', <DashboardOutlined />),
+  getItem(<Link to='/'>داشبورد</Link>, 'dashboard', <DashboardOutlined />),
   getItem('مدیریت کاربران', 'users', <UserOutlined />, [
-    getItem('لیست کاربران', 'users-list'),
-    getItem('افزودن کاربر', 'users-add')
+    getItem(<Link to='/person'>لیست کاربران</Link>, 'users-list'),
+    getItem(<Link to='/person/new'>افزودن کاربر</Link>, 'users-add')
   ]),
   getItem('مدیریت مقالات', 'posts', <UserOutlined />, [
     getItem('لیست مقالات', 'posts-list'),
