@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react'
 import { Table as AntTable } from 'antd'
+import React, { useMemo } from 'react'
 
 export default function Table ({ data, columns, rowKey = 'id' }) {
   const newColumns = useMemo(() => {

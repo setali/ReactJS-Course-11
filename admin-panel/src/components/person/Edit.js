@@ -1,4 +1,4 @@
-import { message, Spin } from 'antd'
+import { message } from 'antd'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { GENDER_OPTIONS } from '../../tools/constants'

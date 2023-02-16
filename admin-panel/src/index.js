@@ -4,6 +4,8 @@ import App from './components/App'
 import { ConfigProvider } from 'antd'
 import fa_IR from 'antd/lib/locale/fa_IR'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider as ReduxProvider } from 'react-redux'
+import store from './redux/store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -14,7 +16,9 @@ root.render(
       locale={fa_IR}
       theme={{ token: { fontFamily: 'vazir' } }}
     >
-      <App />
+      <ReduxProvider store={store}>
+        <App />
+      </ReduxProvider>
     </ConfigProvider>
   </Router>
   // </React.StrictMode>

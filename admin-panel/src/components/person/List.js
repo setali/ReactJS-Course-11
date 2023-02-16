@@ -1,13 +1,12 @@
+import { DeleteOutlined, EditOutlined, EyeOutlined } from '@ant-design/icons'
+import { Popconfirm } from 'antd'
 import React, { Component } from 'react'
-import request from '../../tools/request'
-import { Popconfirm, message } from 'antd'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { EyeOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons'
+import { deletePerson, getPersons } from '../../redux/actions/person'
 import Table from '../utils/Table'
 
-export default class Persons extends Component {
-  state = { persons: [] }
-
+class Persons extends Component {
   columns = [
     { key: 'id', title: 'شناسه' },
     { key: 'name', title: 'نام' },
@@ -29,7 +28,7 @@ export default class Persons extends Component {
           </Link>
           <Popconfirm
             title='آیا از حذف این رکورد مطمین هستید؟'
-            onConfirm={() => this.removeItem(record.id)}
+            onConfirm={() => this.props.removeItem(record.id)}
           >
             <DeleteOutlined
               style={{ margin: '10px', color: 'red', cursor: 'pointer' }}
@@ -43,26 +42,30 @@ export default class Persons extends Component {
     }
   ]
 
-  getData () {
-    request('/users').then(({ data: persons }) => this.setState({ persons }))
-  }
-
   componentDidMount () {
-    this.getData()
-  }
-
-  removeItem (id) {
-    request(`/users/${id}`, { method: 'delete' }).then(response => {
-      message.success('کاربر با موفقیت حذف شد')
-      this.getData()
-    })
+    this.props.getItems()
   }
 
   render () {
     return (
       <div>
-        <Table data={this.state.persons} columns={this.columns} />
+        <Table data={this.props.persons} columns={this.columns} />
       </div>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    persons: state.persons
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getItems: () => dispatch(getPersons()),
+    removeItem: id => dispatch(deletePerson(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Persons)

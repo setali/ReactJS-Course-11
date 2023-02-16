@@ -9,3 +9,7 @@
   background-color: #fff;
   padding: 2em;
 }
+
+.active {
+  color: red;
+}

@@ -24,8 +24,8 @@ const items = [
     getItem(<Link to='/person/new'>افزودن کاربر</Link>, 'users-add')
   ]),
   getItem('مدیریت مقالات', 'posts', <UserOutlined />, [
-    getItem('لیست مقالات', 'posts-list'),
-    getItem('افزودن مقاله', 'posts-add')
+    getItem(<Link to='/post'>لیست مقالات</Link>, 'posts-list'),
+    getItem(<Link to='/post/new'>افزودن مقاله</Link>, 'posts-add')
   ]),
   {
     type: 'divider'
